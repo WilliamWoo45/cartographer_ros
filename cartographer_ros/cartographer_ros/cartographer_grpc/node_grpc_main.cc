@@ -35,7 +35,7 @@ DEFINE_string(configuration_basename, "",
 DEFINE_string(server_address, "localhost:50051",
               "gRPC server address to stream the sensor data to.");
 DEFINE_bool(
-    start_trajectory_with_default_topics, true,
+    start_trajectory_with_default_topics, false,
     "Enable to immediately start the first trajectory with default topics.");
 DEFINE_string(
     save_map_filename, "",
