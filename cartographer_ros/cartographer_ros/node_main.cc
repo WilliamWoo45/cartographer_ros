@@ -38,7 +38,7 @@ DEFINE_string(load_state_filename, "",
 DEFINE_bool(load_frozen_state, true,
             "Load the saved state as frozen (non-optimized) trajectories.");
 DEFINE_bool(
-    start_trajectory_with_default_topics, true,
+    start_trajectory_with_default_topics, false,
     "Enable to immediately start the first trajectory with default topics.");
 DEFINE_string(
     save_state_filename, "",
