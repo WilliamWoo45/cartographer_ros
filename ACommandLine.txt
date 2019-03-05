@@ -15,3 +15,8 @@ rosrun cartographer_ros cartographer_start_trajectory ... -configuration_directo
 Normal SLAM:
 roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=/xxx.bag
 
+
+Pixracer(Autopilot):
+roslaunch mavros px4.launch
+
+
