@@ -17,6 +17,9 @@ rosrun tf tf_echo /map /odom
 Xsens launch:
 roslaunch xsens_mti_driver display.launch
 
+MT Manager(on Ubuntu)
+
+
 Normal SLAM:
 roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=/xxx.bag
 
