@@ -14,6 +14,23 @@ rosrun cartographer_ros cartographer_start_trajectory ... -configuration_directo
 
 #rosrun cartographer_ros cartographer_start_trajectory ... -configuration_directory '/home/williamwoo/catkin_ws/src/cartographer_ros/cartographer_ros/configuration_files' -configuration_basename 'backpack_2d_localization.lua' -initial_pose '{to_trajectory_id = 0, relative_pose = { translation = { -4, 0, 0}, rotation = {0., 0.,0 } } }'
 
+
+AMCL:
+录包:
+1. roslaunch launch_scripts start_robot.launch
+2. --> ~/ros_bags/zhenyu/ --> ./record-tf-scan.sh
+
+重定位:
+1. roslaunch husky_navigation amcl.launch 
+2. rosbag play --clock ~/..../xxx.bag
+3. rviz
+
+Husky实时定位:
+1. roslaunch launch_scripts start_robot.launch
+2. roslaunch husky_navigation amcl.launch
+3. 自己电脑终端 --> rviz
+
+
 tf_echo:
 rosrun tf tf_echo /map /odom
 
