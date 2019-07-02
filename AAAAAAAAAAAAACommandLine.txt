@@ -23,7 +23,8 @@ AMCL:
 重定位:
 1. roslaunch husky_navigation amcl.launch 
 2. rosbag play --clock ~/..../xxx.bag
-3. rviz
+3. rosparam set /use_sim_time true
+4. rviz
 
 Husky实时定位:
 1. roslaunch launch_scripts start_robot.launch
