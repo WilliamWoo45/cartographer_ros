@@ -12,7 +12,7 @@ Set initial pose:
 rosrun cartographer_ros cartographer_start_trajectory ... -configuration_directory '/home/williamwoo/new_ws/install_isolated/share/cartographer_ros/configuration_files' -configuration_basename 'backpack_2d_localization.lua' -initial_pose '{to_trajectory_id = 0, relative_pose = { translation = { -4, 0, 0}, rotation = {0., 0.,0 } } }'
 
 
-#rosrun cartographer_ros cartographer_start_trajectory ... -configuration_directory '/home/williamwoo/catkin_ws/src/cartographer_ros/cartographer_ros/configuration_files' -configuration_basename 'backpack_2d_localization.lua' -initial_pose '{to_trajectory_id = 0, relative_pose = { translation = { -4, 0, 0}, rotation = {0., 0.,0 } } }'
+#旧 rosrun cartographer_ros cartographer_start_trajectory ... -configuration_directory '/home/williamwoo/catkin_ws/src/cartographer_ros/cartographer_ros/configuration_files' -configuration_basename 'backpack_2d_localization.lua' -initial_pose '{to_trajectory_id = 0, relative_pose = { translation = { -4, 0, 0}, rotation = {0., 0.,0 } } }'
 
 
 
