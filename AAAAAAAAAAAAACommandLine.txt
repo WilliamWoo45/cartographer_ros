@@ -15,6 +15,8 @@ rosrun cartographer_ros cartographer_start_trajectory ... -configuration_directo
 #rosrun cartographer_ros cartographer_start_trajectory ... -configuration_directory '/home/williamwoo/catkin_ws/src/cartographer_ros/cartographer_ros/configuration_files' -configuration_basename 'backpack_2d_localization.lua' -initial_pose '{to_trajectory_id = 0, relative_pose = { translation = { -4, 0, 0}, rotation = {0., 0.,0 } } }'
 
 
+
+
 AMCL:
 录包:
 1. roslaunch launch_scripts start_robot.launch
@@ -28,8 +30,12 @@ AMCL:
 
 Husky实时定位:
 1. roslaunch launch_scripts start_robot.launch
-2. roslaunch husky_navigation amcl.launch
+2. roslaunch nav2d_setup_launches amcl.launch
 3. 自己电脑终端 --> rviz
+
+Gmapping建图:
+1. roslaunch nav2d_setup_launches init_2d_slam.launch
+2. 保存地图: rosrun map_server map_saver -f xxx(map_name)
 
 
 tf_echo:
