@@ -1,4 +1,4 @@
-
+######################################################################################
 Build the .pbstream: 
 roslaunch cartographer_ros offline_backpack_2d.launch bag_filenames:=${HOME}/Downloads/b2-2016-04-05-14-44-52.bag
 
@@ -14,9 +14,12 @@ rosrun cartographer_ros cartographer_start_trajectory ... -configuration_directo
 
 #旧 rosrun cartographer_ros cartographer_start_trajectory ... -configuration_directory '/home/williamwoo/catkin_ws/src/cartographer_ros/cartographer_ros/configuration_files' -configuration_basename 'backpack_2d_localization.lua' -initial_pose '{to_trajectory_id = 0, relative_pose = { translation = { -4, 0, 0}, rotation = {0., 0.,0 } } }'
 
+Normal SLAM:
+roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=/xxx.bag
+######################################################################################
 
 
-
+######################################################################################
 AMCL:
 录包:
 1. roslaunch launch_scripts start_robot.launch
@@ -36,7 +39,7 @@ Husky实时定位:
 Gmapping建图:
 1. roslaunch nav2d_setup_launches init_2d_slam.launch
 2. 保存地图: rosrun map_server map_saver -f xxx(map_name)
-
+######################################################################################
 
 tf_echo:
 rosrun tf tf_echo /map /odom
@@ -51,11 +54,23 @@ roslaunch xsens_mti_driver display.launch
 MT Manager(on Ubuntu)
 
 
-Normal SLAM:
-roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=/xxx.bag
+######################################################################################
+Hector SLAM:
+1. roslaunch hector_slam_launch tutorial.launch
+2. rosbag play --clock xxxx.bag
 
+修改launch file:
+sudo gedit /opt/ros/kinetic/share/hector_slam_launch/launch/tutorial.launch
+
+改 map size:
+sudo gedit /opt/ros/kinetic/share/hector_mapping/launch/mapping_default.launch
+
+#######################################################################################
 
 Pixracer(Autopilot):
 roslaunch mavros px4.launch
+
+
+
 
 
