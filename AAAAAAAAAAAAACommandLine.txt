@@ -72,6 +72,11 @@ sudo gedit /opt/ros/kinetic/share/hector_mapping/launch/mapping_default.launch
 
 #######################################################################################
 
+#######################################################################################
+scan matcher:
+cd /home/williamwoo/lego_loam_ws/src/laser_values/src--> ./scan.py 
+#######################################################################################
+
 Pixracer(Autopilot):
 roslaunch mavros px4.launch
 
