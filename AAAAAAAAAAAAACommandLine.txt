@@ -26,7 +26,8 @@ AMCL:
 2. --> ~/ros_bags/zhenyu/ --> ./record-tf-scan.sh
 
 重定位:
-1. roslaunch husky_navigation amcl.launch 
+
+1. cd scan_matcher_ws/src/scan_tools --> roslaunch husky_navigation amcl.launch 
 2. rosbag play --clock ~/..../xxx.bag
 3. rosparam set /use_sim_time true
 4. rviz
