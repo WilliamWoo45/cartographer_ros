@@ -25,11 +25,16 @@ AMCL:
 1. roslaunch launch_scripts start_robot.launch
 2. --> ~/ros_bags/zhenyu/ --> ./record-tf-scan.sh
 
+
 重定位:
 需要开一个全局roscore，然后 rosparam set /use_sim_time true --> rosparam get /use_sim_time
 1. cd scan_matcher_ws/src/scan_tools --> roslaunch husky_navigation amcl.launch 
 2. rosbag play --clock ~/..../xxx.bag
 3. rviz
+
+添加背景图:
+sudo cp -R /home/williamwoo/xxxx.pgm /opt/ros/kinetic/share/husky_navigation/maps
+
 
 Husky实时定位:
 1. roslaunch launch_scripts start_robot.launch
