@@ -46,8 +46,16 @@ Gmapping建图:
 2. 保存地图: rosrun map_server map_saver -f xxx(map_name)
 ######################################################################################
 
+
 tf_echo:
+# Localization Error:
 rosrun tf tf_echo /map /odom
+
+# Distance travelled:
+rosrun tf tf_echo /odom /base_link
+
+
+
 
 LOAM:
 1. roslaunch loam_velodyne loam_velodyne.launch
