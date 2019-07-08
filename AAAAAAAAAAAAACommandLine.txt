@@ -2,7 +2,8 @@
 Build the .pbstream: 
 roslaunch cartographer_ros offline_backpack_2d.launch bag_filenames:=${HOME}/Downloads/b2-2016-04-05-14-44-52.bag
 
-Pure Localization: 
+
+Pure Localization(只需要/scan + /imu/data): 
 roslaunch cartographer_ros demo_backpack_2d_localization.launch \
    (load_state_filename:=/xxx.bag.pbstream \)
    bag_filename:=/xxx.bag
