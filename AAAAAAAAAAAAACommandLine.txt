@@ -77,6 +77,13 @@ scan matcher:
 cd /home/williamwoo/lego_loam_ws/src/laser_values/src--> ./scan.py 
 #######################################################################################
 
+
+
+remove /tf :
+rosbag filter /home/williamwoo/husky2-pose-07-08-interfer-way10.bag /home/williamwoo/husky2-pose-07-08-interfer-way10-no-tf.bag 'topic == "/scan" or topic == "/husky2_robot_pose" or topic == "/imu/data"'
+
+
+
 Pixracer(Autopilot):
 roslaunch mavros px4.launch
 
