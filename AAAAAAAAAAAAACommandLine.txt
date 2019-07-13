@@ -21,7 +21,7 @@ roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=/xxx.bag
 
 
 ######################################################################################
-AMCL:
+AMCL( map --> odom --> base_link )
 
 录包(/imu/data, /scan, /tf):
 1. roslaunch launch_scripts start_robot.launch
