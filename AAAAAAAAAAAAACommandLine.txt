@@ -22,7 +22,8 @@ roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=/xxx.bag
 
 ######################################################################################
 AMCL:
-录包:
+
+录包(/imu/data, /scan, /tf):
 1. roslaunch launch_scripts start_robot.launch
 2. --> ~/ros_bags/zhenyu/ --> ./record-tf-scan.sh
 
