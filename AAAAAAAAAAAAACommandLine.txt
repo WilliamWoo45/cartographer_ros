@@ -75,7 +75,7 @@ Hector SLAM:
 2. rosbag play --clock xxxx.bag
 
 修改launch file:
-sudo gedit /opt/ros/kinetic/share/hector_slam_launch/launch/tutorial.launch
+sudo gedit /opt/ros/kinetic/share/hector_slam_launch/launch/tutorial.launch --> true 回放bag
 
 改 map size:
 sudo gedit /opt/ros/kinetic/share/hector_mapping/launch/mapping_default.launch
