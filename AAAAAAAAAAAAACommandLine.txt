@@ -97,6 +97,10 @@ rosbag filter /home/williamwoo/husky2-pose-07-08-interfer-way10.bag /home/willia
 Pixracer(Autopilot):
 roslaunch mavros px4.launch
 
+Velodyne change range:
+1. roscd nav25d_setup_launches/launch --> vim nav25d_setup_loam.launch
+2. roscd launch_scripts/launch --> vim init_velodyne.launch
+3. roscd velodyne_pointcloud/launch --> vim cloud_nodelet.launch
 
 
 
