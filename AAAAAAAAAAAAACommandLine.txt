@@ -34,7 +34,7 @@ AMCL( map <-- odom <-- base_link )
 2. rosbag play --clock ~/..../xxx.bag
 3. rviz
 
-添加背景图:
+添加 AMCL 背景图:
 sudo cp -R /home/williamwoo/xxxx.pgm /opt/ros/kinetic/share/husky_navigation/maps
 
 
@@ -56,7 +56,7 @@ rosrun tf tf_echo /map /odom
 # Distance travelled:
 rosrun tf tf_echo /odom /base_link
 
-
+######################################################################################
 
 
 LOAM:
@@ -82,26 +82,31 @@ sudo gedit /opt/ros/kinetic/share/hector_mapping/launch/mapping_default.launch
 
 #######################################################################################
 
+
 #######################################################################################
 scan matcher:
 cd /home/williamwoo/lego_loam_ws/src/laser_values/src--> ./scan.py 
 #######################################################################################
 
 
-
+######################################################################################
 remove /tf :
 rosbag filter /home/williamwoo/husky2-pose-07-08-interfer-way10.bag /home/williamwoo/husky2-pose-07-08-interfer-way10-no-tf.bag 'topic == "/scan" or topic == "/husky2_robot_pose" or topic == "/imu/data"'
+######################################################################################
 
 
-
+######################################################################################
 Pixracer(Autopilot):
 roslaunch mavros px4.launch
+######################################################################################
 
+
+######################################################################################
 Velodyne change range:
 1. roscd nav25d_setup_launches/launch --> vim nav25d_setup_loam.launch
 2. roscd launch_scripts/launch --> vim init_velodyne.launch
 3. roscd velodyne_pointcloud/launch --> vim cloud_nodelet.launch
-
+######################################################################################
 
 
 
