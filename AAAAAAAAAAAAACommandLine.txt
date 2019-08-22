@@ -108,5 +108,12 @@ Velodyne change range:
 3. roscd velodyne_pointcloud/launch --> vim cloud_nodelet.launch
 ######################################################################################
 
+######################################################################################
+Show robot model in rviz:
+1. comment out rviz code in demo_backpack_2d_localization.launch
+2. launch demo_backpack_2d_localization.launch / amcl.launch first
+3. roslaunch husky_description description_new.launch
+4. rviz
 
+######################################################################################
 
