@@ -123,5 +123,9 @@ Show robot model in rviz:
 ######################################################################################
 Laser scan --> pointcloud & False laser scan matching detection:
 
-1. roslaunch 2d_map_fusion oicp_ros_2d.launch (/home/williamwoo/icp_ws/src/2d_map_fusion/launch/oicp_ros_2d.launch)
-2. 
+1. Transform the laser sacn into pointcloud: roslaunch 2d_map_fusion oicp_ros_2d.launch (/home/williamwoo/icp_ws/src/2d_map_fusion/launch/oicp_ros_2d.launch)
+2. Save the pointcloud as .pcd file: rosrun pcl_ros pointcloud_to_pcd input:=/edge_cloud1 _prefix:=/home/williamwoo/..._
+3. Calculate the distance between the real-time laser scan and pointcloud: 
+   cd icp_ws/src/py_cp/src
+   ./py_cp.py
+4. 
