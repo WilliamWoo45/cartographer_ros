@@ -123,4 +123,5 @@ Show robot model in rviz:
 ######################################################################################
 Laser scan --> pointcloud & False laser scan matching detection:
 
-1. 
+1. roslaunch 2d_map_fusion oicp_ros_2d.launch (/home/williamwoo/icp_ws/src/2d_map_fusion/launch/oicp_ros_2d.launch)
+2. 
