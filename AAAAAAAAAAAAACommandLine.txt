@@ -1,4 +1,9 @@
-######################################################################################\
+######################################################################################
+
+收集磁场数据：
+1. cd catkin_ws/devel
+2. source setup.bash
+3. roslaunch xsens_mti_driver display.launch
 
 
 Cartographer root: /home/williamwoo/new_ws/install_isolated
