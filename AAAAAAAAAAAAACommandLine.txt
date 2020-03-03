@@ -5,6 +5,12 @@
 2. source setup.bash
 3. roslaunch xsens_mti_driver display.launch
 
+磁场包转rosbag:
+1. cd catkin_ws/devel
+2. source setup.bash
+3. rosrun rosbag_to_csv rosbag_to_csv.py
+
+######################################################################################
 
 Cartographer root: /home/williamwoo/new_ws/install_isolated
 
