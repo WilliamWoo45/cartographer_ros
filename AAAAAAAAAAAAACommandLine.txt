@@ -8,8 +8,10 @@ Build the .pbstream:
 roslaunch cartographer_ros offline_backpack_2d.launch bag_filenames:=${HOME}/Downloads/b2-2016-04-05-14-44-52.bag
 
 
-Pure Localization(只需要/scan + /imu/data): 
-roslaunch cartographer_ros demo_backpack_2d_localization.launch \
+Pure Localization(只需要/scan + /imu/data, 去掉laser前的/): 
+1. gedit ~/.bashrc --> source ~/new_ws/devel_isolated/setup.bash
+2. cd new_ws/devel_isolated --> source setup.bash
+3. roslaunch cartographer_ros demo_backpack_2d_localization.launch \
    (load_state_filename:=/xxx.bag.pbstream \)
    bag_filename:=/xxx.bag
                        
