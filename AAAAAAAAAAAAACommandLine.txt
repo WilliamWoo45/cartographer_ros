@@ -153,5 +153,16 @@ $ ls /xxx/xxx/xxxx | grep -i xxxxxxx
 
 ######################################################################################
 
+ORB-SLAM2 (stereo camera):
+1. roscore
+2. rosrun ORB_SLAM2 Stereo Vocabulary/ORBvoc.txt Examples/Stereo/EuRoC.yaml true
+3. rosrun image_transport republish compressed in:=/camera/left/image_raw_compressed raw out:=/camera/left/image_raw
+   rosrun image_transport republish compressed in:=/camera/right/image_raw_compressed raw out:=/camera/right/image_raw
+4. rosbag play --pause V1_01_easy.bag
 
 
+
+
+
+
+######################################################################################
