@@ -156,10 +156,11 @@ $ ls /xxx/xxx/xxxx | grep -i xxxxxxx
 
 ORB-SLAM2 (stereo camera):
 1. roscore
-2. rosrun ORB_SLAM2 Stereo Vocabulary/ORBvoc.txt Examples/Stereo/EuRoC.yaml true
-3. rosrun image_transport republish compressed in:=/camera/left/image_raw_compressed raw out:=/camera/left/image_raw
-   rosrun image_transport republish compressed in:=/camera/right/image_raw_compressed raw out:=/camera/right/image_raw
-4. rosbag play --pause V1_01_easy.bag
+2. cd /zy_ws/devel --> source setup.bash --> cd ..
+3. rosrun ORB_SLAM2 Stereo /home/lukewen/zy_ws/src/ORB_SLAM2/Vocabulary/ORBvoc.txt /home/lukewen/zy_ws/src/ORB_SLAM2/Examples/Stereo/ZED_vga.yaml true
+4. rosrun image_transport republish compressed in:=/camera/left/image_raw raw out:=/camera/left/image_raw
+   rosrun image_transport republish compressed in:=/camera/right/image_raw raw out:=/camera/right/image_raw
+5. rosbag play --pause V1_01_easy.bag
 
 
 ######################################################################################
