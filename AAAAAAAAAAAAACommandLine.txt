@@ -103,7 +103,7 @@ sudo gedit /opt/ros/kinetic/share/hector_mapping/launch/mapping_default.launch
 
 
 #######################################################################################
-scan matcher:
+scan match / orientation adjustment(旋转车头):
 cd /home/williamwoo/lego_loam_ws/src/laser_values/src--> ./scan.py 
 #######################################################################################
 
