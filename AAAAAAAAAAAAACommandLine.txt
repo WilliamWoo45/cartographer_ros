@@ -10,6 +10,10 @@
 2. source setup.bash
 3. rosrun rosbag_to_csv rosbag_to_csv.py
 
+去掉特定的rostopic:
+To end up with a new bag file that excludes the /tf topic:
+rosbag filter file.bag file-no-tf.bag "topic != '/tf'"
+
 ######################################################################################
 
 Cartographer root: /home/williamwoo/new_ws/install_isolated
