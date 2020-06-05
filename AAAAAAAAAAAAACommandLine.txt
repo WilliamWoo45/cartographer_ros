@@ -9,8 +9,7 @@
 明星电脑:
 1. cd zy_ws/devel
 2. source setup.bash
-3. roslaunch xsens_driver xsens_driver.launch
-
+3. roslaunch xsens_mti_driver xsens.launch
 
 磁场包转rosbag:
 1. cd catkin_ws/devel
@@ -21,8 +20,7 @@
 To end up with a new bag file that excludes the /tf topic:
 rosbag filter file.bag file-no-tf.bag "topic != '/tf'"
 
-###############################  Cartographer  ###################################
-需要: /scan, /imu/data
+######################################################################################
 
 Cartographer root: /home/williamwoo/new_ws/install_isolated
 
@@ -51,9 +49,7 @@ roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=/xxx.bag
 ######################################################################################
 
 
-###################################  AMCL  #####################################
-需要: /scan, /tf
-
+######################################################################################
 AMCL( map <-- odom <-- base_link )
 
 录包(/imu/data, /scan, /tf):
