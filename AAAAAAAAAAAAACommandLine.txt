@@ -20,6 +20,9 @@
 To end up with a new bag file that excludes the /tf topic:
 rosbag filter file.bag file-no-tf.bag "topic != '/tf'"
 
+或remove /tf :
+rosbag filter /home/williamwoo/husky2-pose-07-08-interfer-way10.bag /home/williamwoo/husky2-pose-07-08-interfer-way10-no-tf.bag 'topic == "/scan" or topic == "/husky2_robot_pose" or topic == "/imu/data"'
+
 ################################  Cartographer  #######################################
 需要: /scan, /imu/data
 
@@ -120,8 +123,7 @@ cd /home/williamwoo/lego_loam_ws/src/laser_values/src--> ./scan.py
 
 
 ######################################################################################
-remove /tf :
-rosbag filter /home/williamwoo/husky2-pose-07-08-interfer-way10.bag /home/williamwoo/husky2-pose-07-08-interfer-way10-no-tf.bag 'topic == "/scan" or topic == "/husky2_robot_pose" or topic == "/imu/data"'
+
 ######################################################################################
 
 
