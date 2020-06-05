@@ -20,11 +20,11 @@
 To end up with a new bag file that excludes the /tf topic:
 rosbag filter file.bag file-no-tf.bag "topic != '/tf'"
 
-######################################################################################
+################################  Cartographer  #######################################
+需要: /scan, /imu/data
 
-Cartographer root: /home/williamwoo/new_ws/install_isolated
-
-录包(/imu/data, /scan, /husky_robot_pose, 不要/)
+Root: /home/williamwoo/new_ws/install_isolated
+录包(/imu/data, /scan, /husky_robot_pose, laser header不要/)
 
 Build the .pbstream: 
 roslaunch cartographer_ros offline_backpack_2d.launch bag_filenames:=${HOME}/Downloads/b2-2016-04-05-14-44-52.bag
@@ -49,7 +49,8 @@ roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=/xxx.bag
 ######################################################################################
 
 
-######################################################################################
+###################################  AMCL  ###########################################
+需要: /scan, /tf
 AMCL( map <-- odom <-- base_link )
 
 录包(/imu/data, /scan, /tf):
@@ -171,6 +172,5 @@ ORB-SLAM2 (stereo camera):
 4. rosrun image_transport republish compressed in:=/camera/left/image_raw raw out:=/camera/left/image_raw
    rosrun image_transport republish compressed in:=/camera/right/image_raw raw out:=/camera/right/image_raw
 5. rosbag play --pause V1_01_easy.bag
-
 
 ######################################################################################
