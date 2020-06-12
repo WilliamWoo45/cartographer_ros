@@ -23,6 +23,8 @@ rosbag filter file.bag file-no-tf.bag "topic != '/tf'"
 或remove /tf :
 rosbag filter /home/williamwoo/husky2-pose-07-08-interfer-way10.bag /home/williamwoo/husky2-pose-07-08-interfer-way10-no-tf.bag 'topic == "/scan" or topic == "/husky2_robot_pose" or topic == "/imu/data"'
 
+!!!把IMU翻转过来，然后跑 roslaunch launch_scripts start_robot.launch，跑出来的包就 AMCL和Cartographer(去掉/tf)都能用！(Husky#2 上成功跑通)
+
 ################################  Cartographer  #######################################
 需要: /scan, /imu/data
 
