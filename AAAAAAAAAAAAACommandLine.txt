@@ -27,7 +27,7 @@ rosbag filter /home/williamwoo/husky2-pose-07-08-interfer-way10.bag /home/willia
 需要: /scan, /imu/data
 
 Root: /home/williamwoo/new_ws/install_isolated
-录包(/imu/data, /scan, /husky_robot_pose, laser header不要/)
+录包(/imu/data, /scan, /husky_robot_pose, laser和imu header不要/)
 
 Build the .pbstream: 
 roslaunch cartographer_ros offline_backpack_2d.launch bag_filenames:=${HOME}/Downloads/b2-2016-04-05-14-44-52.bag
