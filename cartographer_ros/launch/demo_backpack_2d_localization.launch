@@ -27,10 +27,27 @@
       type="cartographer_node" args="
           -configuration_directory $(find cartographer_ros)/configuration_files
           -configuration_basename backpack_2d_localization.lua
-          -load_state_filename $(arg load_state_filename)
-          -start_trajectory_with_default_topics=false"
+          -load_state_filename /home/williamwoo/Z_husky_S2.1/husky-tf-scan-03-23-S2.1-middle-way.bag.pbstream
+          -start_trajectory_with_default_topics=false
+          "
       output="screen">
-    <remap from="echoes" to="horizontal_laser_2d" />
+
+<!-- -start_trajectory_with_default_topics=false -->
+
+<!-- -collect_metrics=true -->
+
+  <!-- <node name="cartographer_ros_msgs" pkg="cartographer_ros"
+      type="cartographer_ros_msgs" args="
+      -configuration_directory $(find cartographer_ros_msgs)/msg
+      -collect_metrics
+      " 
+      output="screen"> -->
+      
+    <!-- <remap from="echoes" to="horizontal_laser_2d" /> -->
+    <remap from="echoes" to="/scan" />
+    <remap from="imu" to="/imu/data"/>
+    <!-- <remap from="imu" to="/imu/data"/> -->
+
   </node>
 
   <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
@@ -40,4 +57,24 @@
       args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz" />
   <node name="playbag" pkg="rosbag" type="play"
       args="--clock $(arg bag_filename)" />
+
 </launch>
+
+<!-- -start_trajectory_with_default_topics=false -->
+
+<!-- -load_state_filename $(arg load_state_filename)" -->
+
+<!-- S1-B4 >>> /home/williamwoo/Z_husky_S1-B4/husky-tf-scan-03-18-B-block-r1.bag.pbstream  拐角处直线, for Bag 1(test number 1) and Bag 2(test number 4)-->
+<!-- S1-B4 >>> /home/williamwoo/Z_husky_S1-B4/husky-tf-scan-03-18-B-block-r3.bag.pbstream -->
+
+<!-- S2.1 >>> /home/williamwoo/Z_husky_S2.1/husky-tf-scan-_2019-03-27-t3-correct.bag.pbstream -->
+<!-- S2.1 >>> /home/williamwoo/Z_husky_S2.1/husky-tf-scan-03-23-S2.1-middle-way.bag.pbstream for Bag 6.7.10,11,20 -->
+
+<!--carpark B--> 
+<!--  /home/williamwoo/Z_husky_carpark/husky2-pose-07-16-carpark-big-way-no-pose.bag.pbstream     出发点(-6.6,+5.5),早上10点，carpark基本满车, way 4/6-->
+<!--  /home/williamwoo/husky2-pose-_2019-07-18-08-12-02-no-pose.bag.pbstream                      出发点(0,+5.5),左上角误差，整体carpark空旷-->
+<!--  /home/williamwoo/husky2-pose-_2019-07-28-05-54-01-no-tf.bag.pbstream        ######          middle way,可用于左上角的几个包 -->
+<!--  /home/williamwoo/husky2-pose-_2019-07-20-05-15-27-no-tf-with-pose.bag.pbstream              截图效果好,但整体偏 -->
+<!--  /home/williamwoo/husky2-pose-_2019-07-20-08-52-31-no-tf-with-pose.bag.pbstream              出发点: 小圈，中间过道误差 way /8/9/10-->
+<!-- /home/williamwoo/husky2-pose-_2019-08-06-22-33-no-tf.bag.pbstream                            大圈，车较多，几乎无误差 -->
+<!-- /home/williamwoo/husky2-pose-_2019-08-06-22-49-no-tf.bag.pbstream                            左上角有些许误差，车较多 -->
