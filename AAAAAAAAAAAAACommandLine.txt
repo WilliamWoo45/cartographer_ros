@@ -6,24 +6,36 @@
 2. source setup.bash
 3. roslaunch xsens_mti_driver display.launch
 
+
 明星电脑:
 1. cd zy_ws/devel
 2. source setup.bash
 3. roslaunch xsens_mti_driver xsens.launch
+
+
+hdl_localization中如何同时显示两个机器人的trajectory：
+1. 先跑hdl_localization的主程序，rviz以及第一个rosbag，确认没有问题之后，再跑：rosbag play --clock /media/williamwoo/Samsung_T5/BAGS/husky2-IJRR-_2020-07-24-23-45-22.bag --topic /husky2_robot_pose /clock:=/clock2
+2. 发布从husky2_robot_pose到map的static transform: rosrun tf static_transform_publisher 0.0 0.0 0.0 0.0 0.0 0.0 husky2 map 100
+3. 在新的窗口中，/home/williamwoo/catkin_ws_hdl/src/hdl_graph_slam/scripts下，跑：rosrun hdl_graph_slam republish_pose.py
+
 
 磁场包转rosbag:
 1. cd catkin_ws/devel
 2. source setup.bash
 3. rosrun rosbag_to_csv rosbag_to_csv.py
 
+
 去掉特定的rostopic:
 To end up with a new bag file that excludes the /tf topic:
 rosbag filter file.bag file-no-tf.bag "topic != '/tf'"
 
+
 或remove /tf :
 rosbag filter /home/williamwoo/husky2-pose-07-08-interfer-way10.bag /home/williamwoo/husky2-pose-07-08-interfer-way10-no-tf.bag 'topic == "/scan" or topic == "/husky2_robot_pose" or topic == "/imu/data"'
 
+
 !!!把IMU翻转过来，然后跑 roslaunch launch_scripts start_robot.launch，跑出来的包就 AMCL和Cartographer(去掉/tf)都能用！(Husky#2 上成功跑通)
+
 
 ################################  Cartographer  #######################################
 需要: /scan, /imu/data
@@ -96,7 +108,16 @@ rosrun tf tf_echo /odom /base_link
 ######################################################################################
 
 
-LOAM:
+################################  HDL-Localization  ##################################
+1. roslaunch hdl_localization hdl_localization.launch (/home/williamwoo/catkin_ws_hdl/src/hdl_localization/launch/hdl_localization.launch)
+2. roscd hdl_localization/rviz --> rviz -d hdl_localization.rviz
+3. rosbag play --clock ...bag --topic /velodyne_points /imu/data
+
+######################################################################################
+
+
+###################################  LOAM  ###########################################
+
 1. roslaunch loam_velodyne loam_velodyne.launch
 2. rosbag play ~/xxxx.bag
 
