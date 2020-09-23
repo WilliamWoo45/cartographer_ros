@@ -128,7 +128,7 @@ MT Manager(on Ubuntu)
 
 
 ######################################################################################
-Hector SLAM:
+Hector SLAM (S1-B4环境记得用hector slam的专属rosbag):
 1. roslaunch hector_slam_launch tutorial.launch
 2. rosbag play --clock xxxx.bag
 
