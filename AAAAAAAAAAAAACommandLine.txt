@@ -137,6 +137,10 @@ sudo gedit /opt/ros/kinetic/share/hector_slam_launch/launch/tutorial.launch --> 
 
 改 map size:
 sudo gedit /opt/ros/kinetic/share/hector_mapping/launch/mapping_default.launch
+S1-B4: "map_size"="3072"
+
+<arg name="base_frame" default="base_link"/>
+<arg name="odom_frame" default="odom"/>
 
 #######################################################################################
 
