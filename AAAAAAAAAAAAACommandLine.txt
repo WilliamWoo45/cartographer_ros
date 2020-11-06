@@ -119,6 +119,25 @@ rosparam set use_sim_time true
 ######################################################################################
 
 
+
+################################  DRL-Localization  ##################################
+roscore
+rosparam set /use_sim_time true
+
+明星电脑:
+1. cd catkin_ws_drl/devel_release --> source setup.bash
+   roslaunch pose_to_tf_publisher odom.launch
+   roslaunch dynamic_robot_localization dynamic_robot_localization_system.launch
+2. rosrun map_server map_server /catkin_ws_drl/src/mymap.yaml
+3. rviz 
+4. rosbag play --clock /.../.../
+
+######################################################################################
+
+
+
+
+
 ###################################  LOAM  ###########################################
 
 1. roslaunch loam_velodyne loam_velodyne.launch
