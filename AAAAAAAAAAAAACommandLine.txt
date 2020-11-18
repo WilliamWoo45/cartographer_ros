@@ -169,8 +169,8 @@ S1-B4: "map_size"="3072"
 ################################  MRPT Localization  ##################################
 1. 用 image2gridmap 生成.gridmap地图: 
 cd catkin_ws/src/mrpt_navigation/mrpt_localization/launch
-image2gridmap -i /home/williamwoo/catkin_ws/src/mrpt_navigation/mrpt_localization/tutorial/mymap.pgm -r 0.05
-2. rosparam set /use_sim_time true --> rosrun tf2_ros static_transform_publisher 0 0 0 0 0 0 odom base_link
+image2gridmap --px -24.37 --py -18.85 -i /home/williamwoo/catkin_ws/src/mrpt_navigation/mrpt_localization/tutorial/mymap.pgm -r 0.05
+2. rosparam set /use_sim_time true
 3. roslaunch zhenyu.launch
 4. rosbag play --clock /home/williamwoo/Z_husky_S1-B4/S1_new/husky2-pose-_2020-06-15-S1-way11.bag
 5. 
