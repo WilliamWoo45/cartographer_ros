@@ -126,7 +126,7 @@ rosparam set /use_sim_time true
 
 明星电脑:
 1. cd catkin_ws_drl/devel_release --> source setup.bash
-   roslaunch pose_to_tf_publisher odom.launch
+   roslaunch pose_to_tf_publisher odom.launch (提供 odom --> base_link 的tf，具体参数可在 odom.launch 中修改)
    roslaunch dynamic_robot_localization dynamic_robot_localization_system.launch
 2. rosrun map_server map_server /catkin_ws_drl/src/mymap.yaml
 3. rviz 
