@@ -142,8 +142,14 @@ cd catkin_ws/src/mrpt_navigation/mrpt_localization/launch
 image2gridmap --cx -24.37 --cy -18.85 -i /home/williamwoo/catkin_ws/src/mrpt_navigation/mrpt_localization/tutorial/mymap.pgm -r 0.05
 2. rosparam set /use_sim_time true
 3. roslaunch zhenyu.launch
-4. rosbag play --clock /home/williamwoo/Z_husky_S1-B4/S1_new/husky2-pose-_2020-06-15-S1-way11.bag
-5. 
+4. rosbag play --clock /.../...mrpt.bag
+
+用 DRL-localization 生成odom->base_link的/tf，然后重新录mprt的rosbag
+1. cd catkin_ws_drl/devel_release --> source setup.bash
+   roslaunch pose_to_tf_publisher odom.launch
+   roslaunch dynamic_robot_localization dynamic_robot_localization_system.launch
+2. rosrun map_server map_server /catkin_ws_drl/src/mymap.yaml
+3. rosbag record /tf /scan /imu/data /imu/data2 /husky_velocity_controller/odom
 
 #######################################################################################
 
