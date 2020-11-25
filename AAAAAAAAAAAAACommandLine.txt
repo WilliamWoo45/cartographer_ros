@@ -144,15 +144,26 @@ image2gridmap --cx -24.37 --cy -18.85 -i /home/williamwoo/catkin_ws/src/mrpt_nav
 3. roslaunch zhenyu.launch
 4. rosbag play --clock /.../...mrpt.bag
 
-用 DRL-localization 生成odom->base_link的/tf，然后重新录mprt的rosbag
+用 DRL-localization 生成odom->base_link的/tf，然后重新录mprt的rosbag(带odom->base_link /tf的)
 1. cd catkin_ws_drl/devel_release --> source setup.bash
    roslaunch pose_to_tf_publisher odom.launch
-   roslaunch dynamic_robot_localization dynamic_robot_localization_system.launch
-2. rosrun map_server map_server /catkin_ws_drl/src/mymap.yaml
+   (roslaunch dynamic_robot_localization dynamic_robot_localization_system.launch)
+2. (rosrun map_server map_server /catkin_ws_drl/src/mymap.yaml)
 3. rosbag record /tf /scan /imu/data /imu/data2 /husky_velocity_controller/odom
+4. rqt check /tf
 
 #######################################################################################
 
+
+################################  LaMa ROS Localization  ##############################
+rosparam set /use_sim_time true
+1. cd catkin_ws_iris_lama/devel source setup.bash
+rosrun iris_lama_ros loc2d_ros scan:=/scan
+2. rosrun map_server map_server /opt/ros/kinetic/share/husky_navigation/maps/carpark-carto-08-06-22-49.yaml
+3. rviz
+4. rosbag play --clock /.../...mrpt.bag
+
+#######################################################################################
 
 
 
