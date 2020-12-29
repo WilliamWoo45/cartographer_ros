@@ -243,13 +243,17 @@ Laser scan --> pointcloud & False laser scan matching detection:
 (1) cd icp_ws/devel --> source setup.bash
 (2) cd /home/williamwoo/icp_ws/src/2d_map_fusion/launch/ --> roslaunch 2d_map_fusion oicp_ros_2d.launch
 
-2. Save the pointcloud as .pcd file: rosrun pcl_ros pointcloud_to_pcd input:=/edge_cloud1 _prefix:=/home/williamwoo/..._
+2. Save the pointcloud as .pcd file: rosrun pcl_ros pointcloud_to_pcd input:=/map_2d_node/edge_cloud1 _prefix:=/home/williamwoo/..._
    生成的点云坐标x,y是反的？？
    pcl_ros地址：/opt/ros/kinetic/share/pcl_ros
 3. Calculate the distance between the real-time laser scan and pointcloud: 
    cd icp_ws/src/py_cp/src
    ./py_cp.py
 4. 
+
+
+PCL viewer:
+1. pcl_viewer /.../xxx.pcd
 
 ######################################################################################
 
@@ -260,7 +264,7 @@ $ ls /xxx/xxx/xxxx | grep -i xxxxxxx
 
 ######################################################################################
 
-ORB-SLAM2 (stereo camera):
+ORB-SLAM2 (stereo camera, 明星电脑):
 1. roscore
 2. cd /zy_ws/devel --> source setup.bash --> cd ..
 3. rosrun ORB_SLAM2 Stereo /home/lukewen/zy_ws/src/ORB_SLAM2/Vocabulary/ORBvoc.txt /home/lukewen/zy_ws/src/ORB_SLAM2/Examples/Stereo/ZED_vga.yaml true
@@ -273,7 +277,6 @@ ORB-SLAM2 (stereo camera):
 
 ######################################################################################
 
-PCL viewer:
-1. pcl_viewer /.../xxx.pcd
+
 
 ######################################################################################
