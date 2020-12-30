@@ -244,14 +244,19 @@ Laser scan --> pointcloud & False laser scan matching detection:
 (2) cd /home/williamwoo/icp_ws/src/2d_map_fusion/launch/ --> roslaunch 2d_map_fusion oicp_ros_2d.launch
 
 2. Save the pointcloud as .pcd file: rosrun pcl_ros pointcloud_to_pcd input:=/map_2d_node/edge_cloud1 _prefix:=/home/williamwoo/..._
-   生成的点云坐标x,y是反的？？
+   生成的点云坐标x,y是反的！！ 需要将屏幕中央放到 点云起点位置，然后确认点云（0,0）的位置。
    pcl_ros地址：/opt/ros/kinetic/share/pcl_ros
 3. Calculate the distance between the real-time laser scan and pointcloud: 
    cd icp_ws/src/py_cp/src
    ./py_cp.py
 4. 
 
+#########################
+sgd_icp:
+1. cd catkin_ws_sgd_icp/src/bin --> ./align_pcd /home/williamwoo/S1_B4_2d.pcd /home/williamwoo/S1-B4-online1_0.pcd /home/williamwoo/catkin_ws_sgd_icp/src/config.json
+修改.json文件来制定初始变换关系
 
+#########################
 PCL viewer:
 1. pcl_viewer /.../xxx.pcd
 
