@@ -167,9 +167,10 @@ image2gridmap --cx -24.37 --cy -18.85 -i /home/williamwoo/catkin_ws/src/mrpt_nav
 rosparam set /use_sim_time true
 1. cd catkin_ws_iris_lama/devel source setup.bash
 rosrun iris_lama_ros loc2d_ros scan:=/scan
-2. rosrun map_server map_server /opt/ros/kinetic/share/husky_navigation/maps/carpark-carto-08-06-22-49.yaml
+2. rosrun map_server map_server /opt/ros/kinetic/share/husky_navigation/maps/mymap.yaml
 3. rviz
 4. rosbag play --clock /.../...mrpt.bag
+5. 触发global localization： cd catkin_ws_iris_lama/devel source setup.bash --> rosservice call /global_localization 
 
 #######################################################################################
 
