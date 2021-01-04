@@ -116,7 +116,7 @@ rosparam set use_sim_time true
 (1. Change the .pcd(map) file in the hdl_localization.launch)
 1. roslaunch hdl_localization hdl_localization.launch (/home/williamwoo/catkin_ws_hdl/src/hdl_localization/launch/hdl_localization.launch)  
 2. roscd hdl_localization/rviz --> rviz -d hdl_localization.rviz
-3. rosbag play --clock ...bag --topic /velodyne_points /imu/data
+3. rosbag play --clock ...bag --topic /velodyne_points /imu/data (减速播放 -r 0.3)
 
 .pcd(map) file是由LeGO-LOAM生成并transform的： /home/williamwoo/lego_loam_ws/src/LeGO-LOAM/LeGO-LOAM/src/mapOptmization.cpp
 ################################ LeGO-LOAM ################################
