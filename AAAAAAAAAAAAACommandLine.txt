@@ -1,7 +1,8 @@
 ######################################################################################
 
 存commandline的数据
-| grep At -A 5(存5行) > test1.txt
+(| grep At -A 5(存5行) > test1.txt)
+./py_cp.py > /home/williamwoo/test-B4-WP11.txt
 
 收集磁场数据：
 自己电脑:
