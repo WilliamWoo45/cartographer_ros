@@ -12,9 +12,14 @@
 
 
 明星电脑:
-1. cd zy_ws/devel
-2. source setup.bash
-3. roslaunch xsens_mti_driver xsens.launch
+1. sudo gedit ~/.bashrc --> 
+   uncomment: export PYTHONPATH=$PYTHONPATH:/usr/lib/python2.7/dist-packages
+   comment out:  # export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/:$PYTHONPATH 
+2. source ~/.bashrc
+3. cd zy_ws/devel
+   cd zy_ws/devel_isolated
+4. source setup.bash
+5. roslaunch xsens_mti_driver xsens_driver.launch
 
 
 hdl_localization中如何同时显示两个机器人的trajectory：
