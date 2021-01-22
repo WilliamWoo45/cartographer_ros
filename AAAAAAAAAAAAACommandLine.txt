@@ -4,6 +4,9 @@
 (| grep At -A 5(存5行) > test1.txt)
 ./py_cp.py > /home/williamwoo/test-B4-WP11.txt
 
+给3DM IMU USB权限:
+sudo chmod a+rw /dev/ttyACM0
+
 收集磁场数据：
 自己电脑:
 1. cd catkin_ws/devel
