@@ -131,9 +131,11 @@ rosparam set use_sim_time true
 3. rosbag play --clock ...bag --topic /velodyne_points /imu/data (减速播放 -r 0.3)
 
 .pcd(map) file是由LeGO-LOAM生成并transform的： /home/williamwoo/lego_loam_ws/src/LeGO-LOAM/LeGO-LOAM/src/mapOptmization.cpp
+
 ################################ LeGO-LOAM ################################
 1. roslaunch lego_loam run.launch
 2. rosbag play *.bag --clock --topic /velodyne_points /imu/data
+3. 生成的地图在: /williamwoo/tmp
 
 ######################################################################################
 
