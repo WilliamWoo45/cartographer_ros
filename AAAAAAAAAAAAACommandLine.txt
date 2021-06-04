@@ -7,6 +7,10 @@
 给3DM IMU USB权限:
 sudo chmod a+rw /dev/ttyACM0
 
+给VN-100 IMU USB权限:
+sudo chmod a+rw /dev/ttyUSB0
+VN-100 IMU 调整为: serial_baud: 921600
+
 收集磁场数据：
 自己电脑:
 1. cd catkin_ws/devel
