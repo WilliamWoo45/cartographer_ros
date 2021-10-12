@@ -112,8 +112,27 @@ Husky实时定位:
 
 Gmapping建图:
 1. roslaunch nav2d_setup_launches init_2d_slam.launch
-2. 保存地图: rosrun map_server map_saver -f xxx(map_name)
+2. 保存地图: rosrun map_server map_saver -f xxx(map_name) 会保存到/Home 目录下
 ######################################################################################
+
+
+################################  Hector SLAM  ########################################
+Hector SLAM (S1-B4环境记得用hector slam的专属rosbag):
+1. roslaunch hector_slam_launch tutorial.launch
+2. rosbag play --clock xxxx.bag
+3. 保存地图: rosrun map_server map_saver -f xxx(map_name) 会保存到/Home 目录下
+
+修改launch file:
+sudo gedit /opt/ros/kinetic/share/hector_slam_launch/launch/tutorial.launch --> true 回放bag
+
+改 map size:
+sudo gedit /opt/ros/kinetic/share/hector_mapping/launch/mapping_default.launch
+S1-B4: "map_size"="3072"
+
+<arg name="base_frame" default="base_link"/>
+<arg name="odom_frame" default="odom"/>
+
+#######################################################################################
 
 
 tf_echo:
@@ -205,24 +224,6 @@ Xsens launch:
 roslaunch xsens_mti_driver display.launch
 
 MT Manager(on Ubuntu)
-
-
-################################  Hector SLAM  ########################################
-Hector SLAM (S1-B4环境记得用hector slam的专属rosbag):
-1. roslaunch hector_slam_launch tutorial.launch
-2. rosbag play --clock xxxx.bag
-
-修改launch file:
-sudo gedit /opt/ros/kinetic/share/hector_slam_launch/launch/tutorial.launch --> true 回放bag
-
-改 map size:
-sudo gedit /opt/ros/kinetic/share/hector_mapping/launch/mapping_default.launch
-S1-B4: "map_size"="3072"
-
-<arg name="base_frame" default="base_link"/>
-<arg name="odom_frame" default="odom"/>
-
-#######################################################################################
 
 
 
