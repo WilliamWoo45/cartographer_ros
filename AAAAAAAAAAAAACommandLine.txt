@@ -4,6 +4,19 @@
 (| grep At -A 5(存5行) > test1.txt)
 ./py_cp.py > /home/williamwoo/test-B4-WP11.txt
 
+######################################################################################
+连接server:
+复制电脑上文件到server (Windows cmd)：
+
+scp C:\Users\zheny\Desktop\xxxx zhenyu@10.97.176.132:~/gpml-matlab-WW
+
+复制server上文件到电脑(Windows cmd):
+scp zhenyu@10.97.176.132:~/gpml-matlab-WW/xxxx.file C:\Users\zheny\Desktop
+
+打开screen:
+screen -S matlab
+######################################################################################
+
 给3DM IMU USB权限:
 sudo chmod a+rw /dev/ttyACM0
 
@@ -11,12 +24,15 @@ sudo chmod a+rw /dev/ttyACM0
 sudo chmod a+rw /dev/ttyUSB0
 VN-100 IMU 调整为: serial_baud: 921600
 
+######################################################################################
+
 收集磁场数据：
 自己电脑:
 1. cd catkin_ws/devel
 2. source setup.bash
 3. roslaunch xsens_mti_driver display.launch
 
+######################################################################################
 
 明星电脑:
 1. sudo gedit ~/.bashrc --> 
@@ -28,18 +44,21 @@ VN-100 IMU 调整为: serial_baud: 921600
 4. source setup.bash
 5. roslaunch xsens_mti_driver xsens_driver.launch
 
+######################################################################################
 
 hdl_localization中如何同时显示两个机器人的trajectory：
 1. 先跑hdl_localization的主程序，rviz以及第一个rosbag，确认没有问题之后，再跑：rosbag play --clock /media/williamwoo/Samsung_T5/BAGS/husky2-IJRR-_2020-07-24-23-45-22.bag --topic /husky2_robot_pose /clock:=/clock2
 2. 发布从husky2_robot_pose到map的static transform: rosrun tf static_transform_publisher 0.0 0.0 0.0 0.0 0.0 0.0 husky2 map 100
 3. 在新的窗口中，/home/williamwoo/catkin_ws_hdl/src/hdl_graph_slam/scripts下，跑：rosrun hdl_graph_slam republish_pose.py
 
+######################################################################################
 
 磁场包转rosbag:
 1. cd catkin_ws/devel
 2. source setup.bash
 3. rosrun rosbag_to_csv rosbag_to_csv.py
 
+######################################################################################
 
 去掉特定的rostopic:
 To end up with a new bag file that excludes the /tf topic:
@@ -51,7 +70,6 @@ rosbag filter /home/williamwoo/husky2-pose-07-08-interfer-way10.bag /home/willia
 
 
 !!!把IMU翻转过来，然后跑 roslaunch launch_scripts start_robot.launch，跑出来的包就 AMCL和Cartographer(去掉/tf)都能用！(Husky#2 上成功跑通)
-
 
 ################################  Cartographer  #######################################
 需要: /scan, /imu/data
