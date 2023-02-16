@@ -333,6 +333,7 @@ ouster-ros驱动
 
 1. sensor_hostname 要改为 os-122212001338.local
 2. metadata 要改为 /home/cartin-wzy/catkin_ws_ouster/src/ouster-ros/ouster-sdk/tests/metadata/2_0_rc2_os-992011000121-32U0_legacy.json
+3. source devel/setup.bash 后 (roslaunch ouster_ros sensor.launch)
 
 ######################################################################################
 
