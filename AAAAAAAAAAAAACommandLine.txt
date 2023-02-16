@@ -329,7 +329,20 @@ ORB-SLAM2 (stereo camera, 明星电脑):
 
 
 ######################################################################################
+ouster-ros驱动
+
+1. sensor_hostname 要改为 os-122212001338.local
+2. metadata 要改为 /home/cartin-wzy/catkin_ws_ouster/src/ouster-ros/ouster-sdk/tests/metadata/2_0_rc2_os-992011000121-32U0_legacy.json
+
+######################################################################################
 
 
+######################################################################################
+启动usfxmax磁力计的步骤：
 
+1. 打开单片机的开关 
+2. 打开catkin_ws_ch343的driver (https://github.com/WCHSoftGroup/ch343ser_linux)
+3. sudo chmod a+rw /dev/ttyACM0 或者 /ttyUSB0 /dev/ttyCH343USB0, 然后 rosrun lmio mag_array_serial
+(4. sudo minicom -s --> serial port setup --> 改Serial Device)
+5. rostopic echo /MagPoints 看有没有数据
 ######################################################################################
