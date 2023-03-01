@@ -349,5 +349,6 @@ ouster-ros驱动
 5. rostopic echo /MagPoints 看有没有数据
 ######################################################################################
 
+rosbag record -a (record all rostopics)
 
 sudo apt-get install ros-melodic-serial
