@@ -328,6 +328,13 @@ ORB-SLAM2 (stereo camera, 明星电脑):
 ######################################################################################
 
 
+
+
+
+查看所有的端口:
+ls /dev/tty*
+ls /dev/serial/by-id/
+
 ######################################################################################
 ouster-ros驱动
 
@@ -335,20 +342,28 @@ ouster-ros驱动
 2. metadata 要改为 /home/cartin-wzy/catkin_ws_ouster/src/ouster-ros/ouster-sdk/tests/metadata/2_0_rc2_os-992011000121-32U0_legacy.json
 3. source devel/setup.bash 后 (roslaunch ouster_ros sensor.launch)
 4. 启动Fast-LIO2（catkin_ws）: roslaunch fast_lio mapping_ouster32.launch
+5. 启动 磁力计的Rviz显示程序: cd LMIO/script/ -> ./mag_mapping_lidar.py
+然后在Rviz里Add topic, 调整为points，大小设为？Decay time设为无穷大1000000,Min设置为20，Max设置为60
 
 ######################################################################################
-
 
 ######################################################################################
 启动usfxmax磁力计的步骤：
 
 1. 打开单片机的开关 
 2. 打开catkin_ws_ch343的driver (https://github.com/WCHSoftGroup/ch343ser_linux)
-3. sudo chmod a+rw /dev/ttyACM0 或者 /ttyUSB0 /dev/ttyCH343USB0, 然后（catkin_ws) rosrun lmio mag_array_serial
+3. 赋予端口权限 sudo chmod a+rw /dev/ttyACM0 或者 /ttyUSB0 /dev/ttyCH343USB0, 然后（catkin_ws) rosrun lmio mag_array_serial
 (4. sudo minicom -s --> serial port setup --> 改Serial Device)
 5. rostopic echo /MagPoints 看有没有数据
 ######################################################################################
 
+######################################################################################
+vectornav驱动
+
+roslaunch vectornav vectornav.launch
+
+######################################################################################
+
 rosbag record -a (record all rostopics)
 
-sudo apt-get install ros-melodic-serial
+sudo apt-get install ros-noetic-serial
