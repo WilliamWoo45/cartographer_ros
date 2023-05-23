@@ -340,7 +340,7 @@ ouster-ros驱动
 
 1. sensor_hostname 要改为 os-122212001338.local
 2. metadata 要改为 /home/cartin-wzy/catkin_ws_ouster/src/ouster-ros/ouster-sdk/tests/metadata/2_0_rc2_os-992011000121-32U0_legacy.json
-3. source devel/setup.bash 后 (roslaunch ouster_ros sensor.launch)
+3. 在/catkin_ws_ouster目录下, source devel/setup.bash 后 (roslaunch ouster_ros sensor.launch)
 4. 启动Fast-LIO2（catkin_ws）: roslaunch fast_lio mapping_ouster32.launch
 5. 启动 磁力计的Rviz显示程序: cd LMIO/script/ -> ./mag_mapping_lidar.py (output_enabled 要设置为 True)
 然后在Rviz里Add topic, 调整为points，大小设为？Decay time设为无穷大1000000, Min设置为20，Max设置为60 (根据实际场地调整。B6和楼下停车场)
