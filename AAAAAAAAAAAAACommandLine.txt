@@ -367,3 +367,6 @@ roslaunch vectornav vectornav.launch
 rosbag record -a (record all rostopics)
 
 sudo apt-get install ros-noetic-serial
+
+Rename rostopic when playing rosbag: 
+rosbag play xxx.bag /oldname/in/rosbag:=/newname
