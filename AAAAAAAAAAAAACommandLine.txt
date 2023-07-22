@@ -168,6 +168,9 @@ rosrun tf tf_echo /map /odom
 # Distance travelled:
 rosrun tf tf_echo /odom /base_link
 
+# MR_SLAM 中求相对位姿:
+rosrun tf tf_echo /robot_1/os_sensor /robot_2/os_sensor (#2相对于#1的位姿)
+
 ######################################################################################
 
 
