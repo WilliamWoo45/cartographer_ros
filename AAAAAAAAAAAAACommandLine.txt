@@ -374,5 +374,8 @@ sudo apt-get install ros-noetic-serial
 Rename rostopic when playing rosbag: 
 rosbag play xxx.bag /oldname/in/rosbag:=/newname
 
+Specify which topics to play back:
+rosbag play recorded1.bag --topics /topic1 /topic2 /topic3
+
 
 如果您在Terminator终端中有大量输出，并且想要在输出中搜索关键字，可以使用快捷键 CTRL + Shift + F
