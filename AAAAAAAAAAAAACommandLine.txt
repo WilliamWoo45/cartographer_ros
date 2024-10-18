@@ -383,6 +383,25 @@ rosbag play recorded1.bag --topics /topic1 /topic2 /topic3
 
 
 
+######################################################################################
+多机磁场建图测试中播包的指令：
+
+rosbag play --clock Corridor-Short-with-Odometry-7-mag.bag /MagPoints:=/MagPoints1 /Odometry:=/Odometry1
+
+rosbag play --clock Corridor-Long-with-Odometry-7-mag.bag /MagPoints:=/MagPoints2 /Odometry:=/Odometry2
+
+rosbag play --clock -s 22 B3-2024-05-21-17-25-44-CCW-s-22s.bag /array_1/MagPoints:=/array_1/MagPoints1 /Odometry:=/Odometry1
+
+rosbag play --clock b3_central_loc_easy_with_odom_2024-07-02-13-40-25.bag /array_1/MagPoints:=/array_1/MagPoints2 /Odometry:=/Odometry2
+
+
+
+rosbag play --clock 2024-10-16-B3-corridor-middle-with-odom.bag /mag_array/MagPoints:=/mag_array/MagPoints1 /Odometry:=/Odometry1
+
+rosbag play --clock 2024-10-16-B3-corridor-up-with-odom.bag /mag_array/MagPoints:=/mag_array/MagPoints2 /Odometry:=/Odometry2
+############################################################################################################################################################################
+
+
 
 ######################################################################################
                                     WSL中常用指令
